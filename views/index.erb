@@ -1,11 +1,17 @@
-<html>
-    <head>
+<head>
         <title>Coin App</title>
-        <link rel="stylesheet" type="test/css" href="/css/styles.css">
-    </head>
-    <body>
-        <center>
-            <div>Hello World!</div>
-        </center>
-    </body>
-</html>
+        <script type="text/javascript" src="js/scripts.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <center>
+        <div class="index">
+            <p>How much cents do you have?</p>
+            <form method="post" action="result">
+                <input type="number" name="cents" min="1">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </center>
+</body>
