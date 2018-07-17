@@ -3,7 +3,11 @@ def min_coins(cents)
     q_count = 0; d_count = 0; n_count = 0; p_count = 0
     coins = {:quarter => 25, :dime => 10, :nickel => 5, :penny => 1}
     until cents == 0
-        if cents >= coins[:quarter]
+        if cents > coins[:quarter]
+            count = cents / 25
+            cents = cents % 25
+            q_count += count
+        elsif cents >= coins[:quarter]
             cents -= coins[:quarter]
             q_count += 1
         elsif cents >= coins[:dime]
