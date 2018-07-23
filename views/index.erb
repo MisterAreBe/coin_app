@@ -8,10 +8,26 @@
     <center>
         <div class="index">
             <p>How much cents do you have?</p>
-            <form method="post" action="result">
-                <input type="number" name="cents" min="1">
-                <input type="submit" value="Submit">
+            <form method="post" action="result" id="my_form">
+                <input type="number" name="cents" min="1" id="welcome" onfocusout="welcomeTo()">
+                <input type="submit" value="Submit" id="get_coins" onclick="document.getElementById('my_form').submit()">
             </form>
         </div>
     </center>
 </body>
+
+<script>
+function welcomeTo() {
+    // var jTong = document.getElementById("welcome")
+    // var isFocused = (document.activeElement === jTong);
+    if(document.getElementById("welcome").value != "") {
+        alert("Welcome to Coin Changer!");
+        document.getElementById("my_form").submit();
+    }else {
+        alert("Welcome to Coin Changer, please input the number of cents you have.");
+    }
+
+};
+
+
+</script>
