@@ -23,7 +23,7 @@ if(h < 13){
 
 function welcomeTo() {
     var acorn = document.getElementById("welcome").value
-    if(Number(acorn) != 0) {
+    if(Number(acorn) >= 1) {
         alert("Welcome to Coin Changer! It is " + days[dn] + ", " + h + ":" + mi + ampm + ", " + months[m] + "/" + d + "/" + y +".");
         document.getElementById("my_form").submit();
     }else {
