@@ -1,8 +1,13 @@
 <center>
     <div class="coin_body" id="results" onmouseover="makePurdy()" onmouseout="purdyGone()">
         <p class="coin_title">Minimal Coins Used For <%=cents%> Cents</p>
-        <p id="date"></p>
-        <p>Quarters: <%=quarter%><br>Dimes: <%=dime%><br>Nickels: <%=nickel%><br>Pennies: <%=penny%></p>
+        <font id="date"></font>
+        <div class="centerDiv">
+        <font id="quarter">Quarters : </font><font id="q"><%=quarter%></font><br>
+        <font id="dime">Dimes : </font><font id="d"><%=dime%></font><br>
+        <font id="nickel">Nickels : </font><font id="n"><%=nickel%></font><br>
+        <font id="penny">Pennies : </font><font id="p"><%=penny%></font><br>
+        </div>
         <form method="get" action="/">
             <input type="submit" value="Again?">
         </form>

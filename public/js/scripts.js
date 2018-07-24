@@ -11,16 +11,19 @@ var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 var ampm = ""
 
 if(mi < 10){
-    mi += "0" + mi
+    mi = "0" + mi;
 };
 if(h < 13){
-    ampm += "AM"    
+    ampm += "AM";   
 }else{
-    ampm += "PM"
+    stand = h;
+    h = stand - 12;
+    ampm += "PM";
 };
 
 function welcomeTo() {
-    if(document.getElementById("welcome").value != "") {
+    var acorn = document.getElementById("welcome").value
+    if(Number(acorn) != 0) {
         alert("Welcome to Coin Changer! It is " + days[dn] + ", " + h + ":" + mi + ampm + ", " + months[m] + "/" + d + "/" + y +".");
         document.getElementById("my_form").submit();
     }else {
@@ -46,10 +49,46 @@ function purdyGone() {
 };
 function loadImage() {
     var num = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
-    document.getElementById("body").style.backgroundImage = "url('/images/img" + num.toString() + ".jpg')";
-    document.getElementById("body").style.backgroundColor = "transparent";
+    document.body.style.backgroundImage = "url('/images/img" + num.toString() + ".jpg')";
+    document.body.style.backgroundColor = "transparent";
+};
+function correctCoins(){
+    var qNum = document.getElementById("q");
+    var dNum = document.getElementById("d");
+    var nNum = document.getElementById("n");
+    var pNum = document.getElementById("p");
+    var quarter = document.getElementById("quarter");
+    var dime = document.getElementById("dime");
+    var nickel = document.getElementById("nickel");
+    var penny = document.getElementById("penny");
+    
+    if(qNum.innerHTML == "[1]"){
+        quarter.innerHTML = "Quarter : "
+    }else if(qNum.innerHTML == "[0]"){
+        quarter.innerHTML = ""
+        qNum.innerHTML = ""
+    };
+    if(dNum.innerHTML == "[1]"){
+        dime.innerHTML = "Dime : "
+    }else if(dNum.innerHTML == "[0]"){
+        dime.innerHTML = ""
+        dNum.innerHTML = ""
+    };
+    if(nNum.innerHTML == "[1]"){
+        nickel.innerHTML = "Nickel : "
+    }else if(nNum.innerHTML == "[0]"){
+        nickel.innerHTML = ""
+        nNum.innerHTML = ""
+    };
+    if(pNum.innerHTML == "[1]"){
+        penny.innerHTML = "Penny : "
+    }else if(pNum.innerHTML == "[0]"){
+        penny.innerHTML = ""
+        pNum.innerHTML = ""
+    };
 };
 function loadStuff() {
     displayDate();
     loadImage();
+    correctCoins();
 };
