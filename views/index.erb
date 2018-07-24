@@ -1,28 +1,9 @@
-<head>
-        <title>Coin App</title>
-        <script type="text/javascript" src="js/scripts.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/css/styles.css">
-</head>
-<body>
-    <center>
-        <div class="index">
-            <p>How much cents do you have?</p>
-            <form method="post" action="result" id="my_form">
-                <input type="number" name="cents" min="1" id="welcome" onfocusout="welcomeTo()">
-                <input type="submit" value="Submit" id="get_coins">
-            </form>
-        </div>
-    </center>
-</body>
-
-<script>
-function welcomeTo() {
-    if(document.getElementById("welcome").value != "") {
-        alert("Welcome to Coin Changer!");
-        document.getElementById("my_form").submit();
-    }else {
-        alert("Welcome to Coin Changer, please input the number of cents you have.");
-    };
-};
-</script>
+<center>
+    <div class="index">
+        <p>How much cents do you have?</p>
+        <form method="post" action="result" id="my_form">
+            <input type="number" name="cents" min="1" id="welcome" onfocusout="welcomeTo()">
+            <input type="submit" value="Submit" id="get_coins">
+        </form>
+    </div>
+</center>
