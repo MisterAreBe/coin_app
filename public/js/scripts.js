@@ -61,30 +61,50 @@ function correctCoins(){
     var dime = document.getElementById("dime");
     var nickel = document.getElementById("nickel");
     var penny = document.getElementById("penny");
-    
+    var qLength = qNum.innerHTML.length;
+    qLength -= 2;
+    var dLength = dNum.innerHTML.length;
+    dLength -= 2;
+    var nLength = nNum.innerHTML.length;
+    nLength -= 2;
+    var pLength = pNum.innerHTML.length;
+    pLength -= 2;
+
     if(qNum.innerHTML == "[1]"){
-        quarter.innerHTML = "Quarter : "
+        quarter.innerHTML = " Quarter";
+        qNum.innerHTML = qNum.innerHTML.substr(1, 1);
     }else if(qNum.innerHTML == "[0]"){
-        quarter.innerHTML = ""
-        qNum.innerHTML = ""
+        quarter.innerHTML = "";
+        qNum.innerHTML = "";
+    }else{
+        qNum.innerHTML = qNum.innerHTML.substr(1, qLength);
     };
     if(dNum.innerHTML == "[1]"){
-        dime.innerHTML = "Dime : "
+        dime.innerHTML = " Dime";
+        dNum.innerHTML = dNum.innerHTML.substr(1, 1);
     }else if(dNum.innerHTML == "[0]"){
-        dime.innerHTML = ""
-        dNum.innerHTML = ""
+        dime.innerHTML = "";
+        dNum.innerHTML = "";
+    }else{
+        dNum.innerHTML = dNum.innerHTML.substr(1, dLength);
     };
     if(nNum.innerHTML == "[1]"){
-        nickel.innerHTML = "Nickel : "
+        nickel.innerHTML = " Nickel";
+        nNum.innerHTML = nNum.innerHTML.substr(1, 1);
     }else if(nNum.innerHTML == "[0]"){
-        nickel.innerHTML = ""
-        nNum.innerHTML = ""
+        nickel.innerHTML = "";
+        nNum.innerHTML = "";
+    }else{
+        nNum.innerHTML = nNum.innerHTML.substr(1, nLength);
     };
     if(pNum.innerHTML == "[1]"){
-        penny.innerHTML = "Penny : "
+        penny.innerHTML = " Penny";
+        pNum.innerHTML = pNum.innerHTML.substr(1, 1);
     }else if(pNum.innerHTML == "[0]"){
-        penny.innerHTML = ""
-        pNum.innerHTML = ""
+        penny.innerHTML = "";
+        pNum.innerHTML = "";
+    }else{
+        pNum.innerHTML = pNum.innerHTML.substr(1, pLength);
     };
 };
 function loadStuff() {
